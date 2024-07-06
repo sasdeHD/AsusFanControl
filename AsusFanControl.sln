@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsusFanControl", "AsusFanControl.csproj", "{02AED2A8-30D2-41A2-97F7-5E5BAB2CA2DE}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup Project", "..\Setup Project\Setup Project.vdproj", "{B9F1C09E-CF11-4741-9A08-062EA487C967}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		64|Any CPU = 64|Any CPU
+		64|x64 = 64|x64
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{02AED2A8-30D2-41A2-97F7-5E5BAB2CA2DE}.64|Any CPU.ActiveCfg = Release|Any CPU
+		{02AED2A8-30D2-41A2-97F7-5E5BAB2CA2DE}.64|Any CPU.Build.0 = Release|Any CPU
+		{02AED2A8-30D2-41A2-97F7-5E5BAB2CA2DE}.64|x64.ActiveCfg = Debug|x64
+		{02AED2A8-30D2-41A2-97F7-5E5BAB2CA2DE}.64|x64.Build.0 = Debug|x64
+		{02AED2A8-30D2-41A2-97F7-5E5BAB2CA2DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02AED2A8-30D2-41A2-97F7-5E5BAB2CA2DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02AED2A8-30D2-41A2-97F7-5E5BAB2CA2DE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{02AED2A8-30D2-41A2-97F7-5E5BAB2CA2DE}.Debug|x64.Build.0 = Debug|Any CPU
+		{02AED2A8-30D2-41A2-97F7-5E5BAB2CA2DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02AED2A8-30D2-41A2-97F7-5E5BAB2CA2DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02AED2A8-30D2-41A2-97F7-5E5BAB2CA2DE}.Release|x64.ActiveCfg = Release|x64
+		{02AED2A8-30D2-41A2-97F7-5E5BAB2CA2DE}.Release|x64.Build.0 = Release|x64
+		{B9F1C09E-CF11-4741-9A08-062EA487C967}.64|Any CPU.ActiveCfg = 64
+		{B9F1C09E-CF11-4741-9A08-062EA487C967}.64|Any CPU.Build.0 = 64
+		{B9F1C09E-CF11-4741-9A08-062EA487C967}.64|x64.ActiveCfg = Release
+		{B9F1C09E-CF11-4741-9A08-062EA487C967}.Debug|Any CPU.ActiveCfg = Debug
+		{B9F1C09E-CF11-4741-9A08-062EA487C967}.Debug|x64.ActiveCfg = Debug
+		{B9F1C09E-CF11-4741-9A08-062EA487C967}.Debug|x64.Build.0 = Debug
+		{B9F1C09E-CF11-4741-9A08-062EA487C967}.Release|Any CPU.ActiveCfg = Release
+		{B9F1C09E-CF11-4741-9A08-062EA487C967}.Release|x64.ActiveCfg = Release
+		{B9F1C09E-CF11-4741-9A08-062EA487C967}.Release|x64.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6F40F663-7C68-4021-A4A4-ACE93224AC32}
+	EndGlobalSection
+EndGlobal
