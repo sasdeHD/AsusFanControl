@@ -8,7 +8,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:tb="clr-namespace:H.NotifyIcon;assembly=H.NotifyIcon.Wpf" 
         Style="{StaticResource MaterialDesignWindow}"
-        mc:Ignorable="d" 
+        mc:Ignorable="d" StateChanged="Window_StateChanged"
         Title="Asus Fan Control" Height="450" Width="800" MinWidth="1280" MinHeight="720" WindowStartupLocation="CenterScreen" Icon="/thermometer.ico">
     <Window.Resources>
         <Style x:Key="InfoLabelStyle" TargetType="Label">

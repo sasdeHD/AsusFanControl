@@ -32,7 +32,7 @@ namespace AsusFanControl.Service
 
         public List<Graph> GetGraphs()
         {
-            return db.Graph.Include(g => g.GraphPoints).ToList();
+            return db.Graph.AsNoTracking().Include(g => g.GraphPoints).ToList();
         }
 
         public async Task<Graph> SaveChanges(ObservableCollection<ObservablePoint> points, Graph graph)

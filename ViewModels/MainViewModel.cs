@@ -28,6 +28,7 @@ namespace AsusFanControl.ViewModel
         private RelayCommand setFanPowerCommand;
         private RelayCommand modeSelectedCommand;
         private RelayCommand switchFanControlStateCommand;
+        private RelayCommand saveSettingCommand;
 
 
         public MainViewModel()
@@ -66,6 +67,7 @@ namespace AsusFanControl.ViewModel
             set
             {
                 SetProperty(ref selectedGraph, value);
+                Setting.SelectedGraph = value;
             }
         }
 
@@ -85,6 +87,7 @@ namespace AsusFanControl.ViewModel
                 {
                     if (Setting.FanAutoState)
                     {
+                        FanPower = Math.Min(fanPower, 99);
                         Setting.FanPower = FanPower;
                         asusService.SetFanSpeeds(FanPower);
                     }
@@ -111,7 +114,7 @@ namespace AsusFanControl.ViewModel
         {
             get
             {
-                return switchFanControlStateCommand ?? (switchFanControlStateCommand = new RelayCommand(obj =>
+                return saveSettingCommand ?? (saveSettingCommand = new RelayCommand(obj =>
                 {
                     settingService.SaveSetting(Setting);
                 }));
@@ -190,7 +193,10 @@ namespace AsusFanControl.ViewModel
             while (!token.IsCancellationRequested)
             {
                 if (SelectedGraph is null || Setting.FanAutoState)
+                {
+                    await Task.Delay(TimeSpan.FromSeconds(1), token);
                     continue;
+                }
 
                 UpdateTemperatureList((int)asusService.Thermal_Read_Cpu_Temperature());
                 double averageTemperature = CalculateAverageTemperature();
@@ -232,11 +238,11 @@ namespace AsusFanControl.ViewModel
                 double percentage = (averageTemperature - x1) / (x2 - x1);
 
                 double interpolatedFanSpeed = y1 + (y2 - y1) * percentage * speedMultiplier;
-                speed = (int)interpolatedFanSpeed;
+                speed = (int)Math.Min(interpolatedFanSpeed, 99); 
             }
             else
             {
-                speed = (int)(points.Item1.Y * speedMultiplier);
+                speed = (int)Math.Min(points.Item1.Y * speedMultiplier, 99);
             }
 
             asusService.SetFanSpeeds(speed);
@@ -256,11 +262,11 @@ namespace AsusFanControl.ViewModel
                 double percentage = (averageTemperature - x1) / (x2 - x1);
 
                 double interpolatedFanSpeed = y1 + (y2 - y1) * percentage * 2.0;
-                speed = (int)interpolatedFanSpeed;
+                speed = (int)Math.Min(interpolatedFanSpeed, 99);
             }
             else
             {
-                speed = (int)(points.Item1.Y * 2.0);
+                speed = (int)Math.Min(points.Item1.Y * 2.0, 99);
             }
 
             asusService.SetFanSpeeds(speed);

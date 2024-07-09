@@ -1,6 +1,7 @@
 ﻿using AsusFanControl.Model.Enums;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,12 @@ namespace AsusFanControl.Infrastructure
 
         public static void Log(string message, LogLevel logLevel = LogLevel.Error)
         {
-            var path = "C:\\Asus_Control";
+            var path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Logs");
+
+            if (!path.EndsWith(Path.DirectorySeparatorChar.ToString()))
+            {
+                path += Path.DirectorySeparatorChar;
+            }
 
             if (!path.EndsWith("\\"))
             {

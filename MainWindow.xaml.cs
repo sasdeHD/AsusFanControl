@@ -121,5 +121,13 @@ namespace AsusFanControl
                 }));
             }
         }
+
+        private void Window_StateChanged(object sender, EventArgs e)
+        {
+            if (WindowState == WindowState.Minimized)
+            {
+                Hide();
+            }
+        }
     }
 }
